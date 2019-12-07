@@ -1,3 +1,6 @@
 package algtice
 
 
+func main() {
+
+}
