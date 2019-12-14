@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"algtice/basicalg"
+	"algtice/sort"
 	"testing"
 )
 

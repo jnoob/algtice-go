@@ -1,4 +1,4 @@
-package basicalg
+package sort
 
 import (
 	"testing"
