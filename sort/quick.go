@@ -1,8 +1,9 @@
 package sort
 
+// QuickSort is O(NlogN) timing compelexity algrithm
 func QuickSort(candidates []int) []int {
 	sortee := newArraySortee(candidates)
-	quickSortInternal(sortee, 0, sortee.GetLength() - 1)
+	quickSortInternal(sortee, 0, sortee.GetLength()-1)
 	return sortee.Return().([]int)
 }
 
@@ -23,5 +24,5 @@ func partition(list Sortee, lo int, hi int) int {
 		}
 	}
 	list.Swap(i+1, hi)
-	return i+1
+	return i + 1
 }

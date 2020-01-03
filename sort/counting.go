@@ -1,5 +1,6 @@
 package sort
 
+// CountingSort is sort with counting
 func CountingSort(array []int, k int) []int {
 	counts := make([]int, k+1)
 	for i := 0; i < len(array); i++ {

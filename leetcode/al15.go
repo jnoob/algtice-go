@@ -16,7 +16,7 @@ func threeSum(nums []int) [][]int {
 		if contains {
 			for _, index := range list.indexs {
 				if index[0] != i && index[1] != i {
-					sum3ZeroItems = append(sum3ZeroItems, []int {nums[i], nums[index[0]], nums[index[1]]})
+					sum3ZeroItems = append(sum3ZeroItems, []int{nums[i], nums[index[0]], nums[index[1]]})
 				}
 			}
 		}
@@ -26,14 +26,14 @@ func threeSum(nums []int) [][]int {
 
 func get2Sums(nums []int) map[int]twoIndexList {
 	sumMap := map[int]twoIndexList{}
-	for i := 0; i < len(nums) - 1; i++ {
+	for i := 0; i < len(nums)-1; i++ {
 		for j := i + 1; j < len(nums); j++ {
 			sum2 := nums[i] + nums[j]
 			list, contains := sumMap[sum2]
 			if contains {
-				list.append([2]int {i, j})
+				list.append([2]int{i, j})
 			} else {
-				list = twoIndexList{indexs:[][2]int {{i, j}}}
+				list = twoIndexList{indexs: [][2]int{{i, j}}}
 				sumMap[sum2] = list
 			}
 		}

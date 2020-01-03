@@ -6,6 +6,6 @@ func RadixSort(list [][]int) {
 
 	for i := colCount - 1; i >= 0; i-- {
 		sortee.MoveToCol(i)
-		quickSortInternal(sortee, 0, sortee.GetLength() - 1)
+		quickSortInternal(sortee, 0, sortee.GetLength()-1)
 	}
 }
