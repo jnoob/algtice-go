@@ -2,13 +2,13 @@ package leetcode
 
 func advantageCount(A []int, B []int) []int {
 	tmpB := make([]int, 0, len(B))
-	for _, e:= range B{
+	for _, e := range B {
 		tmpB = append(tmpB, e)
 	}
-	sortedA, sortedB := quickSort(A, 0, len(A) - 1), quickSort(tmpB, 0, len(B)-1)
+	sortedA, sortedB := quickSort(A, 0, len(A)-1), quickSort(tmpB, 0, len(B)-1)
 	advMap := map[int][]int{}
 
-	bIndex, bTail := 0, len(B) - 1
+	bIndex, bTail := 0, len(B)-1
 	for _, eA := range sortedA {
 		if eA > sortedB[bIndex] {
 			addEle(advMap, eA, sortedB[bIndex])
@@ -43,7 +43,7 @@ func takeEle(advMap map[int][]int, b int) int {
 	if len(list) == 1 {
 		a := list[0]
 		return a
-	} else  {
+	} else {
 		a := list[0]
 		advMap[b] = list[1:]
 		return a
@@ -70,5 +70,5 @@ func partition(eles []int, start int, end int) ([]int, int) {
 		}
 	}
 	eles[ltTail+1], eles[end] = eles[end], eles[ltTail+1]
-	return eles, ltTail+1
+	return eles, ltTail + 1
 }

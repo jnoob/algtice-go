@@ -7,7 +7,7 @@ import (
 
 func Test160AlgSample(t *testing.T) {
 	ah, at := buildLinkList([]int{4, 1})
-	bh, bt := buildLinkList([]int{5,0,1})
+	bh, bt := buildLinkList([]int{5, 0, 1})
 	ch, _ := buildLinkList([]int{8, 4, 5})
 
 	at.Next = ch

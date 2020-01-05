@@ -7,7 +7,7 @@ import (
 )
 
 func baseNeg2(N int) string {
-	if N == 0{
+	if N == 0 {
 		return "0"
 	}
 
@@ -19,7 +19,7 @@ func baseNeg2(N int) string {
 
 		result = strconv.Itoa(absr(n, 2)) + result
 		sub = float64(n) / -2
-		n = int(math.Ceil(float64(n)/-2))
+		n = int(math.Ceil(float64(n) / -2))
 	}
 	fmt.Printf("n = %v, result = %v, sub = %v\n", n, result, sub)
 	return result

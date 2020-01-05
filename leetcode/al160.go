@@ -1,7 +1,7 @@
 package leetcode
 
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
@@ -28,4 +28,3 @@ func getNodes(head *ListNode) []*ListNode {
 	}
 	return nodes
 }
-
