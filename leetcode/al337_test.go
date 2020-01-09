@@ -6,7 +6,7 @@ import (
 )
 
 func Test337AlgRobSmple(t *testing.T) {
-	seq := []int{3,2,3,-1,3,-1,1}
+	seq := []int{3, 2, 3, -1, 3, -1, 1}
 	//seq := []int{3,4,5,1,3,-1,1}
 	tree := buildBinaryTree(seq)
 	printBinaryTree(tree)
@@ -44,7 +44,7 @@ func printBinaryTree(root *TreeNode) {
 
 func buildBinaryTree(seq []int) *TreeNode {
 	root := &TreeNode{
-		Val:   seq[0],
+		Val: seq[0],
 	}
 	i := 0
 	nodes := []*TreeNode{root}
@@ -54,7 +54,7 @@ func buildBinaryTree(seq []int) *TreeNode {
 			if node == nil {
 				nextLevel = append(nextLevel, nil, nil)
 			} else {
-				li := l(i+j)
+				li := l(i + j)
 				if li >= len(seq) {
 					nodes = nil
 					break
@@ -63,7 +63,7 @@ func buildBinaryTree(seq []int) *TreeNode {
 				node.Left = nl
 				nextLevel = append(nextLevel, nl)
 
-				ri := r(i+j)
+				ri := r(i + j)
 				if ri >= len(seq) {
 					nodes = nil
 					break
@@ -85,12 +85,12 @@ func buildTreeNode(val int) *TreeNode {
 	if val == -1 {
 		return nil
 	} else {
-		return &TreeNode{Val:val}
+		return &TreeNode{Val: val}
 	}
 }
 
 func l(i int) int {
-	return 2 * i + 1
+	return 2*i + 1
 }
 
 func r(i int) int {
