@@ -25,7 +25,7 @@ func mergeKLists(lists []*ListNode) *ListNode {
 
 func removeNils(lists []*ListNode) []*ListNode {
 	rendered := []*ListNode{}
-	for _,e := range lists {
+	for _, e := range lists {
 		if e != nil {
 			rendered = append(rendered, e)
 		}
@@ -71,12 +71,12 @@ func siftDown(list []*ListNode, length int) {
 
 func buildMinHeap(lists []*ListNode) {
 	length := len(lists)
-	for i:= length / 2; i>= 0; i-- {
+	for i := length / 2; i >= 0; i-- {
 		minHeapify(lists, i, length)
 	}
 }
 
-func minHeapify(lists []*ListNode, i , length int) {
+func minHeapify(lists []*ListNode, i, length int) {
 	minIndex := i
 	left, right := leftChild(i), rightChild(i)
 	if left >= length {
@@ -95,10 +95,9 @@ func minHeapify(lists []*ListNode, i , length int) {
 }
 
 func leftChild(i int) int {
-	return  2 * i + 1
+	return 2*i + 1
 }
 
 func rightChild(i int) int {
-	return 2 * i + 2
+	return 2*i + 2
 }
-

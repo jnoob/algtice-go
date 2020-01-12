@@ -36,5 +36,5 @@ func (root *ListNode) unfold() []int {
 		vals = append(vals, node.Val)
 		node = node.Next
 	}
-	return  vals
+	return vals
 }

@@ -19,7 +19,7 @@ func lengthOfLongestSubstring(s string) int {
 		}
 		appears[c] = i
 	}
-	nonRepeatCount := len(s) - head -1
+	nonRepeatCount := len(s) - head - 1
 	if nonRepeatCount > maxNonRepeat {
 		maxNonRepeat = nonRepeatCount
 	}

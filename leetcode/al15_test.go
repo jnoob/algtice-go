@@ -1,15 +1,17 @@
 package leetcode
 
-// func TestThreeSums(t *testing.T) {
-// 	result := threeSum([]int{-1, 0, 1, 2, -1, -4})
-// 	expected := [][]int{
-// 		[]int{-1, 0, 1},
-// 		[]int{-1, -1, 2},
-// 	}
-// 	if areThreeSumREqual(result, expected) {
-// 		t.Errorf("%v expected, but get %v", expected, result)
-// 	}
-// }
+import "testing"
+
+func TestThreeSums(t *testing.T) {
+	result := threeSum([]int{-1, 0, 1, 2, -1, -4})
+	expected := [][]int{
+		[]int{-1, 0, 1},
+		[]int{-1, -1, 2},
+	}
+	if areThreeSumREqual(result, expected) {
+		t.Errorf("%v expected, but get %v", expected, result)
+	}
+}
 
 func areThreeSumREqual(r1 [][]int, r2 [][]int) bool {
 	if len(r1) != len(r2) {

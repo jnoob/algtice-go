@@ -16,11 +16,17 @@ func TestQ3QCheckInclusion(t *testing.T) {
 	assert.False(t, checkInclusion(s1, s2))
 
 	s1, s2 = "a", "eidboaoo"
-	assert.False(t, checkInclusion(s1, s2))
+	assert.True(t, checkInclusion(s1, s2))
 
 	s1, s2 = "sddsda", "sad"
 	assert.False(t, checkInclusion(s1, s2))
 
 	s1, s2 = "aad", "sadba"
 	assert.False(t, checkInclusion(s1, s2))
+
+	s1, s2 = "baccd", "mbaccnbaccabdggh"
+	assert.True(t, checkInclusion(s1, s2))
+
+	s1, s2 = "abc", "bbbca"
+	assert.True(t, checkInclusion(s1, s2))
 }

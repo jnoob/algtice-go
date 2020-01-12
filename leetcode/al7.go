@@ -20,7 +20,7 @@ func reverse(x int) int {
 	for i := 1; i <= len(bits); i++ {
 		bit := bits[len(bits)-i]
 		if bit > 0 {
-			result += bit*int(math.Pow10(i-1))
+			result += bit * int(math.Pow10(i-1))
 		}
 		//fmt.Printf("bit=%v -> result=%v\n",bit, result)
 	}

@@ -8,10 +8,10 @@ func longestCommonPrefix(strs []string) string {
 	} else {
 		minL := getMinLength(strs)
 		commonEnd, terminate := minL-1, false
-		for i:=0; i < minL; i++ {
-			for j:= 1; j < len(strs); j++ {
+		for i := 0; i < minL; i++ {
+			for j := 1; j < len(strs); j++ {
 				if strs[j][i] != strs[j-1][i] {
-					commonEnd = i-1
+					commonEnd = i - 1
 					terminate = true
 					break
 				}
@@ -21,7 +21,7 @@ func longestCommonPrefix(strs []string) string {
 			}
 		}
 		if commonEnd >= 0 {
-			return strs[0][0:commonEnd+1]
+			return strs[0][0 : commonEnd+1]
 		} else {
 			return ""
 		}
@@ -30,7 +30,7 @@ func longestCommonPrefix(strs []string) string {
 
 func getMinLength(strs []string) int {
 	minL := len(strs[0])
-	for i:= 1; i< len(strs); i++ {
+	for i := 1; i < len(strs); i++ {
 		if len(strs[i]) < minL {
 			minL = len(strs[i])
 		}

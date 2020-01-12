@@ -37,8 +37,7 @@ func TestQ2QLongestCommonPrefix(t *testing.T) {
 	result = longestCommonPrefix(list)
 	assert.Equal(t, expected, result)
 
-	list, expected = []string{"dog","racecar","car"}, ""
+	list, expected = []string{"dog", "racecar", "car"}, ""
 	result = longestCommonPrefix(list)
 	assert.Equal(t, expected, result)
 }
-
