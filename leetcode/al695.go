@@ -1,7 +1,5 @@
 package leetcode
 
-import "fmt"
-
 func maxAreaOfIsland(grid [][]int) int {
 	maxArea, maxRegion := 0, 1
 	regionsCount, regionMap := map[int]int{}, map[int]int{}
@@ -15,7 +13,7 @@ func maxAreaOfIsland(grid [][]int) int {
 				regionNum, regionCount, joinRegion := 0, 0, -1
 				if arr[k] > 1 {
 					if _, exist := regionMap[arr[k]]; exist {
-						regionNum = regionMap[arr[k]]
+						regionNum = getFinalJoin(regionMap, arr[k])
 						joinRegion = arr[k]
 					} else {
 						regionNum = arr[k]
@@ -34,8 +32,13 @@ func maxAreaOfIsland(grid [][]int) int {
 
 					} else if arr[m] > 1 {
 						joinRegion = arr[m]
-						regionCount += regionsCount[joinRegion]
-						regionMap[joinRegion] = regionNum
+						endJoin := getFinalJoin(regionMap, joinRegion)
+
+						if endJoin != regionNum {
+							regionCount += regionsCount[endJoin]
+							regionMap[endJoin] = regionNum
+						}
+
 					} else { // arr[m] <= 0
 						k = m + 1
 						break
@@ -52,15 +55,23 @@ func maxAreaOfIsland(grid [][]int) int {
 			}
 		}
 	}
-	for i,v:=range regionsCount {
+	for _,v:=range regionsCount {
 		if v > maxArea {
 			maxArea = v
-			fmt.Printf("max-i:%v\n", i)
 		}
 	}
-	for _, arr := range grid {
-		fmt.Printf("%v\n", arr)
-	}
-	fmt.Printf("%v\n", regionsCount)
 	return maxArea
+}
+
+func getFinalJoin(joinMap map[int]int, entry int) int {
+	final := entry
+	for {
+		_, joined := joinMap[final]
+		if joined {
+			final = joinMap[final]
+		} else {
+			break
+		}
+	}
+	return final
 }
