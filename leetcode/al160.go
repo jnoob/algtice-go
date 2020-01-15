@@ -28,13 +28,3 @@ func getNodes(head *ListNode) []*ListNode {
 	}
 	return nodes
 }
-
-func (root *ListNode) unfold() []int {
-	vals := []int{}
-	node := root
-	for node != nil {
-		vals = append(vals, node.Val)
-		node = node.Next
-	}
-	return vals
-}

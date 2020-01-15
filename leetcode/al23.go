@@ -93,11 +93,3 @@ func minHeapify(lists []*ListNode, i, length int) {
 		minHeapify(lists, minIndex, length)
 	}
 }
-
-func leftChild(i int) int {
-	return 2*i + 1
-}
-
-func rightChild(i int) int {
-	return 2*i + 2
-}

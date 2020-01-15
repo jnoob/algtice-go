@@ -8,22 +8,22 @@ func threeSum(nums []int) [][]int {
 
 	if nums[0] > 0 || nums[len(nums)-1] < 0 {
 		return result
-	} else if (nums[0] == 0 && nums[2] == 0 )|| (nums[len(nums)-1] == 0 && nums[len(nums)-3] == 0){
-		result = append(result, []int{0,0,0})
-	} else  {
+	} else if (nums[0] == 0 && nums[2] == 0) || (nums[len(nums)-1] == 0 && nums[len(nums)-3] == 0) {
+		result = append(result, []int{0, 0, 0})
+	} else {
 		firstPositive, lastNegative := -1, -1
 		i := len(nums) / 2
 		for firstPositive == -1 {
 			if nums[i] > 0 {
-				if  nums[i-1] <= 0 {
+				if nums[i-1] <= 0 {
 					firstPositive = i
 				} else {
 					i = i / 2
 				}
-			}  else if nums[i] == 0 {
+			} else if nums[i] == 0 {
 				i = i + 1
 			} else {
-				i = (len(nums)-1 + i)/2
+				i = (len(nums) - 1 + i) / 2
 			}
 		}
 		i = firstPositive - 1
@@ -34,8 +34,8 @@ func threeSum(nums []int) [][]int {
 				lastNegative = i
 			}
 		}
-		if firstPositive - lastNegative > 3 {
-			result = append(result, []int{0,0,0})
+		if firstPositive-lastNegative > 3 {
+			result = append(result, []int{0, 0, 0})
 		}
 
 	}
